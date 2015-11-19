@@ -14,6 +14,7 @@ HTML:
   ...
   <script src="/path/to/jquery.truncatemiddle.js"></script>
 </body>
+```
 
 ## Usage
 
