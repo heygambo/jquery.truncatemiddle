@@ -27,12 +27,12 @@ JavaScript:
 
 ```javascript
 // Initialize
-$('.truncate-middle').trunacteMiddle({length: 25});
+$('.truncate-middle').truncateMiddle({length: 25});
 ```
 
 ```javascript
 // Update
-$('.truncate-middle').trunacteMiddle({length: 100, ellipsis: ' [...] '});
+$('.truncate-middle').truncateMiddle({length: 100, ellipsis: ' [...] '});
 ```
 
 ## License
