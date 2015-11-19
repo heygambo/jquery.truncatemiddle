@@ -17,9 +17,13 @@ HTML:
 
 ## Usage
 
+HTML:
+
 ```html
 <p class="truncate-middle">Your very long title that wouldn't fit in a tiny box.</p>
 ```
+
+JavaScript:
 
 ```javascript
 // Initialize
