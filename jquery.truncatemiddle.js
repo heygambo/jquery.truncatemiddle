@@ -53,12 +53,12 @@
       if (options == null) {
         options = {};
       }
+      if (command.constructor.name === "Object") {
+        options = command;
+      }
       return this.each(function() {
         var plugin;
         if ($.data(this, "plugin_" + pluginName)) {
-          if (command.constructor.name === "Object") {
-            options = command;
-          }
           plugin = $.data(this, "plugin_" + pluginName);
           return plugin.setOptions(options);
         } else {
