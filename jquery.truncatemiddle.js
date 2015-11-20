@@ -1,25 +1,10 @@
-//
-// jquery.truncatemiddle › A naive implementation to trunacate strings in the middle like the Apple Finder does.
-//
-// Copyright (c) 2015 Christian Gambardella
-//
-// Licensed under the MIT license:
-// http://www.opensource.org/licenses/mit-license.php
-//
-// Project home:
-// https://github.com/nerdyglasses/jquery.truncatemiddle
-//
-// Version:  0.0.1
-// 
-
-
 (function() {
   (function($, window, document) {
     var TruncateMiddle, defaults, pluginName;
     pluginName = "truncateMiddle";
     defaults = {
-      length: 35,
-      ellipsis: ' ... '
+      ellipsis: '...',
+      length: 35
     };
     TruncateMiddle = (function() {
       function TruncateMiddle(element, options) {
@@ -68,16 +53,14 @@
       if (options == null) {
         options = {};
       }
-      if (command.constructor.name === "Object") {
-        options = command;
-      }
       return this.each(function() {
         var plugin;
         if ($.data(this, "plugin_" + pluginName)) {
-          plugin = $.data(this, "plugin_" + pluginName);
-          if (plugin[command]) {
-            return plugin[command](options);
+          if (command.constructor.name === "Object") {
+            options = command;
           }
+          plugin = $.data(this, "plugin_" + pluginName);
+          return plugin.setOptions(options);
         } else {
           return $.data(this, "plugin_" + pluginName, new TruncateMiddle(this, options));
         }
