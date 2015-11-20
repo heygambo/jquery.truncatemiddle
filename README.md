@@ -48,7 +48,7 @@ E.g. to adjust for fluid layouts.
 
 ```javascript
 // Updating existing elements
-$('.truncate-middle').truncateMiddle('setOptions', {length: 100, ellipsis: ' [...] '});
+$('.truncate-middle').truncateMiddle({length: 100, ellipsis: ' [...] '});
 ```
 
 ## License

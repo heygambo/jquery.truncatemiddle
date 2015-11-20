@@ -70,10 +70,10 @@ do ($ = jQuery, window, document) ->
   # A really lightweight plugin wrapper around the constructor,
   # preventing against multiple instantiations
   $.fn[pluginName] = (command, options = {}) ->
-    options = command if command.constructor.name == "Object"
     @each ->
       if $.data(@, "plugin_#{pluginName}")
+        options = command if command.constructor.name == "Object"
         plugin = $.data(@, "plugin_#{pluginName}")
-        plugin[command](options) if plugin[command]
+        plugin.setOptions(options)
       else
         $.data @, "plugin_#{pluginName}", new TruncateMiddle @, options
